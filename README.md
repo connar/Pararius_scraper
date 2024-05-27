@@ -24,7 +24,7 @@ options:
 
 Say I want to look for properties in Eindhoven in the price range of [0,600]. We would run the following command:
 ```
-C:\Users\connar\Documents\GitHub\parariusProject>python pscrapy.py --min 0 --max 600 --city Eindhoven --phone "+14149398617" --email "nepotib597@huleos.com" --fname "Tyson" --lname "Smithston" --message "I really like this property! Let me know if it is still available."
+C:\Users\user1\Documents\GitHub\parariusProject>python pscrapy.py --min 0 --max 600 --city Eindhoven --phone "+14149398617" --email "nepotib597@huleos.com" --fname "Tyson" --lname "Smithston" --message "I really like this property! Let me know if it is still available."
 
 Minimum number: 0
 Maximum number: 600
@@ -44,7 +44,7 @@ Checking our email, we see we successfully got a reply back:
 
 and the output from our script is:  
 ```
-C:\Users\connar\Documents\GitHub\parariusProject>python pscrapy.py --min 0 --max 600 --city Eindhoven --phone "+14149398617" --email "nepotib597@huleos.com" --fname "Tyson" --lname "Smithston" --message "I really like this property! Let me know if it is still available."
+C:\Users\user1\Documents\GitHub\parariusProject>python pscrapy.py --min 0 --max 600 --city Eindhoven --phone "+14149398617" --email "nepotib597@huleos.com" --fname "Tyson" --lname "Smithston" --message "I really like this property! Let me know if it is still available."
 Minimum number: 0
 Maximum number: 600
 City: Eindhoven
