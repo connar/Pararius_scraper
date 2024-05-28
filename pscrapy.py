@@ -114,12 +114,11 @@ def submit_form(html_content, action_url, first_name, last_name, email, phone, m
 
     # Submit the form
     response = scraper.post(action_url, data=form_data)
-    print(response.text)
     # Check the response
     if response.status_code == 200:
-        print("Form submitted successfully!")
+        print("[*] Form submitted successfully!")
     else:
-        print("Error submitting form. Status code:", response.status_code)
+        print("[*] Error submitting form. Status code:", response.status_code)
 
 def get_html_content(url):
     response = scraper.get(url)
@@ -164,14 +163,14 @@ def get_args():
     if min_number > max_number:
         parser.error("'--min' should not be greater than '--max'")
 
-    print(f"Minimum number: {min_number}")
-    print(f"Maximum number: {max_number}")
-    print(f"City: {city_name}")
-    print(f"Phone: {phone_number}")
-    print(f"Email: {email_address}")
-    print(f"First Name: {first_name}")
-    print(f"Last Name: {last_name}")
-    print(f"Message: {message}")
+    print(f"- Minimum number: {min_number}")
+    print(f"- Maximum number: {max_number}")
+    print(f"- City: {city_name}")
+    print(f"- Phone: {phone_number}")
+    print(f"- Email: {email_address}")
+    print(f"- First Name: {first_name}")
+    print(f"- Last Name: {last_name}")
+    print(f"- Message: {message}")
 
     return min_number, max_number, city_name, phone_number, email_address, first_name, last_name, message
 
@@ -180,7 +179,7 @@ if __name__ == "__main__":
     min_, max_, city, phone, email, fname, lname, msg = get_args()
 
     url = f'https://www.pararius.com/apartments/{city.lower()}/{min_}-{max_}'
-    print(url)
+    print("\n[+] Scraping url: ", url)
     results, form_urls = scrape_pararius(url)
 
     if results:
@@ -203,9 +202,9 @@ if __name__ == "__main__":
                         'RequestDetailsUrl': p['request_details_url']
                     })
 
-        print(f"Scraped data saved to '{csv_file}'")
+        print(f"[+] Scraped data saved to '{csv_file}'")
 
-        for url in form_urls[:1]:
+        for url in form_urls:
             time.sleep(20)
             html_content = get_html_content(url)
             if html_content:
