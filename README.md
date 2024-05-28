@@ -24,40 +24,52 @@ options:
 
 Say I want to look for properties in Eindhoven in the price range of [0,600]. We would run the following command:
 ```
-C:\Users\user1\Documents\GitHub\parariusProject>python pscrapy.py --min 0 --max 600 --city Eindhoven --phone "+14149398617" --email "nepotib597@huleos.com" --fname "Tyson" --lname "Smithston" --message "I really like this property! Let me know if it is still available."
-
-Minimum number: 0
-Maximum number: 600
-City: Eindhoven
-Phone: +14149398617
-Email: nepotib597@huleos.com
-First Name: Tyson
-Last Name: Smithston
-Message: I really like this property! Let me know if it is still available.
-https://www.pararius.com/apartments/eindhoven/0-600
+C:\Users\user1\Documents\GitHub\parariusProject>python pscrapy.py --min 0 --max 600 --city Eindhoven --phone "+14149398617" --email "jovipo3289@adrais.com" --fname "Tyson" --lname "Smithston" --message "I really like this property! Let me know if it is still available."
 ```
 For demo purposes, I just got a fake number from online and a temporary email from https://temp-mail.org/en.
 Let some time pass and see the results...
 
-Checking our email, we see we successfully got a reply back:  
-![image](https://github.com/connar/Pararius_scraper/assets/87579399/0568f537-7d05-4c9b-8346-26cb12d02992)
+Checking our email, we see we successfully got many replies back:  
+
+![image](https://github.com/connar/Pararius_scraper/assets/87579399/6a1f7272-963b-4bbf-97ef-c98bd5024a08)
+
 
 and the output from our script is:  
 ```
-C:\Users\user1\Documents\GitHub\parariusProject>python pscrapy.py --min 0 --max 600 --city Eindhoven --phone "+14149398617" --email "nepotib597@huleos.com" --fname "Tyson" --lname "Smithston" --message "I really like this property! Let me know if it is still available."
-Minimum number: 0
-Maximum number: 600
-City: Eindhoven
-Phone: +14149398617
-Email: nepotib597@huleos.com
-First Name: Tyson
-Last Name: Smithston
-Message: I really like this property! Let me know if it is still available.
-https://www.pararius.com/apartments/eindhoven/0-600
-Scraped data saved to 'pararius_Eindhoven_properies.csv'
+C:\Users\user1\Documents\GitHub\parariusProject>python pscrapy.py --min 0 --max 600 --city Eindhoven --phone "+14149398617" --email "jovipo3289@adrais.com" --fname "Tyson" --lname "Smithston" --message "I really like this property! Let me know if it is still available."
+- Minimum number: 0
+- Maximum number: 600
+- City: Eindhoven
+- Phone: +14149398617
+- Email: jovipo3289@adrais.com
+- First Name: Tyson
+- Last Name: Smithston
+- Message: I really like this property! Let me know if it is still available.
 
-Form submitted successfully!
+[+] Scraping url:  https://www.pararius.com/apartments/eindhoven/0-600
+[+] Scraped data saved to 'pararius_Eindhoven_properies.csv'
+[*] Form submitted successfully!
+[*] Form submitted successfully!
+[*] Form submitted successfully!
+[*] Form submitted successfully!
+[*] Form submitted successfully!
+[*] Form submitted successfully!
+[*] Form submitted successfully!
+[*] Form submitted successfully!
+[*] Form submitted successfully!
+[*] Form submitted successfully!
+
+C:\Users\user1\Documents\GitHub\parariusProject>
 ```
 
 Checking our pararius_Eindhoven_properties.csv we see all the currently available properties for Eindhoven in the price range specified:   
-![image](https://github.com/connar/Pararius_scraper/assets/87579399/c3c3ad23-5abf-4ece-928a-c7a9e46be618)
+
+![image](https://github.com/connar/Pararius_scraper/assets/87579399/30bb6fcc-8ef5-4e15-acdf-f0f0d4e8bab6)
+
+
+### Add in future
+Things to add in the future:  
+- Mark each property in the .csv as "Done" or "Pending" whether a form was submitted in the past for the property.
+- Use scheduling to run every 5 minutes (reference: https://www.geeksforgeeks.org/python-script-that-is-executed-every-5-minutes/)
+- Before the script runs, check if the .csv exists. If it is, check whether the pararius uploaded new properties and if so, if they exist on the .csv. If they do not, add them with a "Pending" keyword and then proceed to submit a form for them.
+- If a property in the .csv no longer exists in pararius, remove it from the .csv.
