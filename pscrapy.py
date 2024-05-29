@@ -13,6 +13,7 @@ def init():
     global scraper
     scraper = cfscrape.create_scraper()
 
+    # Bypass Cloudflare's anti-bot protection (meaning, no captcha's messing with our requests)
     scraper.headers.update({'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'})
     cfscrape.DEFAULT_CIPHERS = 'TLS_AES_256_GCM_SHA384:ECDHE-ECDSA-AES256-SHA384'
     response = scraper.get('https://www.pararius.com/cgi-bin/fl/js/verify')
